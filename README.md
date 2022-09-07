@@ -28,7 +28,7 @@ elementos externos, entre outros.
 
 ## Tecnologia
 
-Dillinger uses a number of open source projects to work properly:
+Esta aplicação utiliza outros projectos open-source para funcionar correctamente:
 
 - [Laravel 8.45.1](https://laravel.com/) - Framework de back-end e acesso a DB.
 - [PHP 8.0.2](https://www.php.net/) - Linguagem de programação utilizada para servidor.
