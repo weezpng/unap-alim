@@ -1,0 +1,94 @@
+.content-header h1 {
+  color: #ced4da !important;
+}
+
+.dark-mode a:not(.btn):hover {
+  color: #ced4da !important;
+}
+
+.btn-d-flex,
+.card-tools > a,
+.breadcrumb-item > a{
+color: #69c1a7 !important;
+}
+
+.navbar-dark .form-control-navbar+.input-group-append>.btn-navbar, .navbar-dark .form-control-navbar+.input-group-prepend>.btn-navbar{
+border: 1px solid #3f474e !important;
+}
+
+.navbar-dark .btn-navbar, .navbar-dark .form-control-navbar {
+  border: 1px solid #3f474e !important;
+}
+
+.searchFloat{
+color: white !important;
+}
+
+.daterangepicker .calendar-date{
+background: #343a40 !important;
+}
+
+.daterangepicker td.in-range {
+background: #636363 !important;
+}
+
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+background: #6b6b6b;
+}
+
+.daterangepicker .ranges .input-mini{
+  background: #636363 !important;
+  color: white !important;
+}
+
+.rangePickerApplyBtn{
+    border: none !important
+}
+
+.rangePickerApplyBtn:hover{
+color: #1b814c !important
+}
+
+.btn{
+border-color: white !important;
+}
+
+.btn:hover{
+color: #fff !important;
+}
+
+.btn-primary{
+border-color: #1b814c !important;
+}
+
+.btn-primary:hover{
+background-color: #343a40 !important;
+}
+
+.btn-danger{
+border-color: #e74c3c !important;
+}
+
+.btn-danger:hover{
+background-color: #343a40 !important;
+}
+
+.btn-secondary{
+border-color: white !important;
+}
+
+.btn-secondary:hover{
+background-color: #343a40 !important;
+}
+
+.btn-tool{
+border-style: none !important;
+}
+
+#loading{
+background: #454d55;
+}
+
+.subtitle {
+color: #a6a6a7 !important;
+}

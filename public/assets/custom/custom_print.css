@@ -1,0 +1,44 @@
+body{
+  padding: 20px;
+}
+
+.btn{
+  display: none !important;
+}
+
+.badge{
+  background: none !important;
+  color: black !important;
+  font-weight: bolder !important;
+  border: none !important;
+}
+
+.info-box .progress{
+  background-color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  height: 1px !important;
+  margin: 0px 0 !important;
+}
+
+.back-to-top{
+  display: none !important;
+}
+
+.card-tools{
+  display: none !important;
+}
+
+.card-body{
+  max-height: none !important;
+}
+
+.card-title{
+  color: black !important;
+  font-weight: 900;
+}
+
+.card-header{
+  background-color: #fff !important;
+  border-top: 2px solid #000 !important;
+}

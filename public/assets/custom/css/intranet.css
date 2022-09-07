@@ -1,0 +1,11 @@
+body{
+  font-size: 80%;
+}
+
+.card-body{
+  max-height: 67vh !important;
+}
+
+.main-header {
+  transform: scaleY(0.9);
+}

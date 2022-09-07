@@ -1,0 +1,10 @@
+.toast-not{
+    padding: 10px 10px 5px;
+    background-color: rgb(63 71 78) !important; 
+    margin-right: 7px;
+    margin-top: 10px;
+  }
+  
+  .dark-mode .toast .toast-header {
+    background-color: rgb(63 71 78) !important; 
+  }

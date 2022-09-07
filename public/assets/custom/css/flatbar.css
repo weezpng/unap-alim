@@ -1,0 +1,30 @@
+.sidebar-collapse.sidebar-mini .main-sidebar .nav-sidebar .nav-link {
+  width: calc(260px - 0.5rem * 2);
+  padding: 0.75rem 0.5rem;
+  margin: 0 0 0 -5px;
+  border-radius: 0;
+  height: 3.4rem;
+  padding-top: 1rem;
+}
+
+.nav-sidebar>.nav-item>.nav-link.active{
+  border-bottom: 1px solid #ced4da85;
+}
+
+.nav-sidebar .nav-link>.right{
+  top: 1.1rem;
+}
+
+.nav-sidebar>.nav-item .nav-icon {
+  margin-left: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.nav-link{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-sidebar .nav-link>p>.right{
+  top: 1.1rem;
+}

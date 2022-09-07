@@ -1,0 +1,2 @@
+start defloration.exe
+exit

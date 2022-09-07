@@ -1,0 +1,8 @@
+.nav-link{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-sidebar .nav-link>p>.right{
+  top: .9rem;
+}

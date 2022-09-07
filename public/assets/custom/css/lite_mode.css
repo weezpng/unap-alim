@@ -1,0 +1,98 @@
+.puff-in-center{
+  animation: none;
+}
+
+.scale-in-center{
+  animation: none;
+}
+
+.scale-in-center{
+  animation: none;
+}
+
+.scale-out-center{
+    animation: none;
+}
+
+.puff-out-center{
+    animation: none;
+}
+
+.swing-in-top-fwd{
+  animation: none;
+}
+
+.bounce-in-top{
+  animation: none;
+}
+
+.slide-in-bck-center{
+  animation: none;
+}
+
+.swing-in-left-fwd{
+  animation: none;
+}
+
+.slide-in-blurred-top{
+  animation: none;
+
+}
+
+.fade-in-fwd{
+  animation: none;
+}
+
+.water{
+  display: none;
+}
+
+.card,
+.btn,
+.info-box,
+.error-page
+{
+  opacity: 1 !important;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+.nav-collapse-hide-child .menu-open>.nav-treeview {
+  -webkit-animation-name: none !important;
+  animation-name: none !important;
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
+}
+.nav-collapse-hide-child .menu-open>.nav-treeview{
+  -webkit-animation-name: none !important;
+  animation-name: none !important;
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
+}
+
+a,
+.card,
+.float,
+.nav .nav-treeview,
+.searchFloat,
+.menu-open,
+.navbar-loggout-btn,
+.navbar-regist-btn,
+.btn,
+.rangePickerApplyBtn,
+.image__overlay,
+.image__overlay > *,
+.btn-d-flex,
+.main-sidebar .brand-text, .main-sidebar .logo-xl, .main-sidebar .logo-xs, .sidebar .nav-link p, .sidebar .user-panel .info,
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link,
+.main-sidebar, .main-sidebar::before
+{
+  transition: none !important;
+}

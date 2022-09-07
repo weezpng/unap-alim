@@ -1,0 +1,31 @@
+a {
+    color: #038262;
+}
+
+a:hover, a:active {
+    color: black;
+}
+
+.user-panel, .user-panel .info{
+      color: #212529;
+}
+
+.navbar{
+  background-color: white;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #007bff;
+}
+
+.nav-link{
+  color: #212529;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #000;
+}
+
+#loading{
+  background: #f4f6f9;
+}

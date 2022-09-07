@@ -1,0 +1,10 @@
+html, body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body{
+    max-height: none !important;
+    overflow-y: auto !important;
+}
