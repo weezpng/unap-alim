@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\marcacoesHandlerController;
+use App\Http\Controllers\gestaoHandlerController;
+use App\Http\Controllers\superUserHandlerController;
+
+Route::middleware([checkAccountLock::class])->group(function(){
+  Route::get('gestão/utilizadores/searchNIM', [superUserHandlerController::class, 'searchUserToAdd'])->middleware('auth')->name('super.userAdd.search');
+  Route::get('gestão/utilizadores/searchNIM/toGroup', [superUserHandlerController::class, 'searchFromSuperAddToGroupSearch'])->middleware('auth')->name('super.userAddGroup.search');
+  Route::get('gestão/utilizadores/procurar/adicionados', [superUserHandlerController::class, 'searchUserFromMine'])->middleware('auth')->name('super.userAdd.viewMine');
+  Route::get('gestão/utilizadores/add_subgestor', [superUserHandlerController::class, 'searchUserSubGestor'])->middleware('auth')->name('super.add_gestor');
+  Route::get('gestão/utilizadores/addUser/{id}', [superUserHandlerController::class, 'addUserToMe'])->middleware('auth')->name('super.userAdd.ToMe');
+  Route::POST('gestão/grupo/add/user', [superUserHandlerController::class, 'addUserToGroup'])->middleware('auth')->name('gestão.addToGrupo');
+  Route::POST('gestão/grupo/remove/user', [superUserHandlerController::class, 'removeUserFromGroup'])->middleware('auth')->name('gestão.destroyFromGroup');
+  Route::POST('gestão/utilizadores/addGroup', [superUserHandlerController::class, 'addChildrenGroup'])->middleware('auth')->name('gestão.addChildrenGroup');
+  Route::POST('gestão/utilizadores/addSubGroup', [superUserHandlerController::class, 'addChildrenSubGroup'])->middleware('auth')->name('gestão.addChildrenSubGroup');
+  Route::get('gestão/grupo/search_user', [superUserHandlerController::class, 'searchUser'])->middleware('auth')->name('gestão.grupo.searchUserToAdd');
+  Route::get('gestão/utilizadores/assoc/{id}', [gestaoHandlerController::class, 'viewChildreUser'])->middleware('auth')->name('gestão.viewUserChildren');
+  Route::POST('gestão/utilizadores/assoc/editsave', [superUserHandlerController::class, 'editChildrenUser'])->middleware('auth')->name('gestão.editChildrenUser');
+  Route::POST('gestão/utilizadores/assoc/tagmeal', [gestaoHandlerController::class, 'marcarRefeicao'])->middleware('auth')->name('gestão.tagMealChildrenUser');
+  Route::POST('gestão/utilizadores/assoc/unttagmeal', [gestaoHandlerController::class, 'desmarcarRefeicao'])->middleware('auth')->name('gestão.untagMealChildrenUser');
+  Route::POST('gestão/utilizadores/addchildren', [superUserHandlerController::class, 'addChildrenUser'])->middleware('auth')->name('gestão.addChildrenUser');
+  Route::POST('gestão/utilizadores/removerchildren', [superUserHandlerController::class, 'destroyChildrenUser'])->middleware('auth')->name('gestão.destroyChildrenUser');
+  Route::POST('gestão/utilizadores/redrawchildren', [superUserHandlerController::class, 'retirarChildrenUser'])->middleware('auth')->name('gestão.retirarChildrenUser');
+  Route::POST('gestão/utilizadores/retireFromMe', [superUserHandlerController::class, 'desassociarUser'])->middleware('auth')->name('gestão.desassociarUser');
+  Route::POST('gestão/utilizadores/redrawchildrensub', [superUserHandlerController::class, 'retirarChildrenUserFromSub'])->middleware('auth')->name('gestão.retirarChildrenUserFromSub');
+  Route::post('marcacao/childrenuser/marcar_ref', [gestaoHandlerController::class, 'storeChidlrenMarcaçao'])->middleware('auth')->name('marcacao.children.store');
+  Route::post('marcacao/childrenuser/remove_ref', [gestaoHandlerController::class, 'destroyChidlrenMarcaçao'])->middleware('auth')->name('marcacao.children.destroy');
+  Route::post('gestão/group/edit', [gestaoHandlerController::class, 'editGroupName'])->middleware('auth')->name('gestão.editGroupName');
+  Route::post('marcacao/group', [marcacoesHandlerController::class, 'verMarcacoesEmMassa'])->middleware('auth')->name('marcacao.forgroup');
+  Route::get('marcacao/group', [marcacoesHandlerController::class, 'verMarcacoesSelGrupo'])->middleware('auth')->name('marcacao.forgroup_select');
+  Route::post('marcacao/group/marcarRef', [marcacoesHandlerController::class, 'marcarParaGrupo'])->middleware('auth')->name('marcacao.ref.forgrupo');
+  Route::post('marcacao/group/getGroups', [marcacoesHandlerController::class, 'getSubsInGroup'])->middleware('auth')->name('marcacao.getgroups');
+  Route::get('gestão/grupo/{grupo}', [superUserHandlerController::class, 'manageGroup'])->middleware('auth')->name('gerir.grupo');
+  Route::get('gestão/grupo/{grupo}/sub/{sub}', [superUserHandlerController::class, 'manageSubGroup'])->middleware('auth')->name('gerir.subgrupo');
+  Route::get('gestão/grupo/delete/{grupo}', [superUserHandlerController::class, 'removeGroup'])->middleware('auth')->name('gerir.group.current.delete');
+  Route::get('gestão/grupo/delete/{grupo}/sub/{sub}', [superUserHandlerController::class, 'deleteSubGroup'])->middleware('auth')->name('gerir.subgrupo.delete');
+  Route::get('gestão/grupo/delete/{grupo}/all_subs', [superUserHandlerController::class, 'removeAllSubGroups'])->middleware('auth')->name('gerir.allsubgrupos.delete');
+  Route::post('gestão/grupo/edit/save', [superUserHandlerController::class, 'saveSubGroupEdit'])->middleware('auth')->name('gerir.subgrupo.edit');
+  Route::post('gestão/subgrupo/edit/save', [superUserHandlerController::class, 'saveGroupEdit'])->middleware('auth')->name('gerir.grupo.edit');
+  Route::get('gestão/utilizadores/addUser/{id}/{group}', [superUserHandlerController::class, 'addUserToMeInGroup'])->middleware('auth')->name('super.userAdd.ToMe.Group');
+  Route::get('gestão/utilizadores/addUser/{id}/{group}/{sub}', [superUserHandlerController::class, 'addUserToMeInSubGroup'])->middleware('auth')->name('super.userAdd.ToMe.SubGroup');
+  Route::get('gestao/user/type/{type}/{id}', [superUserHandlerController::class, 'present_user_definer_type'])->middleware('auth')->name('super.getusrtype.redirect');
+  Route::get('gestao/getUsersToSub', [superUserHandlerController::class, 'get_users_to_subgroups'])->middleware('auth')->name('super.useradd.tosub.get');
+  Route::post('gestao/addUsersToSub', [superUserHandlerController::class, 'addUserToSub'])->middleware('auth')->name('super.addUsersToSub');
+  Route::get('gestao/user/addToGrupo/fromSearch/{grupo}/{id}/{type}', [superUserHandlerController::class, 'addUserToGrupo'])->middleware('auth')->name('grupo.fromSearch.addUser');
+  Route::get('gestao/group/{grupoID}/{subgrupoID}/retire', [superUserHandlerController::class, 'retireUsersFromGroupAll'])->middleware('auth')->name('grupo.top_level.retire');
+  Route::POST('gestao/utilizadores/childrenuser/converter', [superUserHandlerController::class, 'convertUser'])->middleware('auth')->name('childrenUser.convert');
+  Route::get('gestao/subgestor/add/{id}', [gestaoHandlerController::class, 'assoc_secundary_gestor'])->middleware('auth')->name('subgest_assoc');
+  Route::get('gestao/subgestor/remove', [gestaoHandlerController::class, 'desassoc_secundary_gestor'])->middleware('auth')->name('subgest_desassoc');
+});
